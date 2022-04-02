@@ -4,4 +4,4 @@
 
 ## T-SQL
 
-* [Parameter Sniffing](t-sql/parameter-sniffing.md)
+* [🧀 Parameter Sniffing](t-sql/parameter-sniffing.md)
