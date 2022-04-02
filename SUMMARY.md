@@ -2,6 +2,6 @@
 
 * [Hello World](README.md)
 
-## SQL
+## T-SQL
 
-* [Page 1](sql/page-1.md)
+* [Parameter Sniffing](t-sql/parameter-sniffing.md)
