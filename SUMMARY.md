@@ -2,7 +2,7 @@
 
 * [Hello World](README.md)
 
-## T-SQL
+## 💻 T-SQL
 
 * [🧀 Parameter Sniffing](t-sql/parameter-sniffing.md)
 
