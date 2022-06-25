@@ -17,7 +17,7 @@ Source: [https://www.youtube.com/watch?v=FgjO4fJybZs\&t=13s](https://www.youtube
 5. Putting everything in one section
 6. Not using semantic HTML tags - Use headings, sections, footer tags etc so that screen readers can understand the page. In Oxygen, you can easily change the tags of a div for example.
 7. Using divs to create lists - On the main div that contains the list, use a custom "ul" tag, and for each div make the tag a custom "li". Alternatively, you can use Rich Text module and insert the line items there, but the only downside of this is that it is hard to create an icon list.
-8. Pixels instead of relative units - &#x20;
+8. Pixels instead of relative units -  Use REM and set your root font size to 62.5% so that 1 REM = 10px, 1.6 REM = 16px, etc.
 
 
 
