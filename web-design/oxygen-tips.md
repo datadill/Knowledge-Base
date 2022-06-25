@@ -4,7 +4,7 @@ description: Oxygen is a developer focused, low-code page builder built on Wordp
 
 # Oxygen Tips
 
-20 Mistakes to Avoid&#x20;
+18 Mistakes to Avoid&#x20;
 
 Source: [https://www.youtube.com/watch?v=FgjO4fJybZs\&t=13s](https://www.youtube.com/watch?v=FgjO4fJybZs\&t=13s)
 
