@@ -24,6 +24,7 @@ Source: [https://www.youtube.com/watch?v=FgjO4fJybZs\&t=13s](https://www.youtube
 12. Background vs Real images - do not use background images if the image is important because there is no SEO value and screen readers do not see it.
 13. Not removing pagination - people try to hide the pagination button with DISPLAY: none, but this still gets indexed and that is bad.
 14. Not using custom post types for queryable items - create custom post types similar to how WooCommerce creates Products
+15. No 404 template
 
 
 
