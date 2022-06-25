@@ -15,7 +15,9 @@ Source: [https://www.youtube.com/watch?v=FgjO4fJybZs\&t=13s](https://www.youtube
 3. Not locking classes - Once something is the way you like it, go to Advanced -> Lock Selector Styles
 4. Using the columns module - Columns module uses Flexbox, but CSS Grid is better for laying out content. Flexbox does have an advantage in positioning content.
 5. Putting everything in one section
-6. Not using semantic HTML tags - Use headings, sections, etc so that screen readers can access the page. In Oxygen, you can easily change the tags of a div for example.
+6. Not using semantic HTML tags - Use headings, sections, footer tags etc so that screen readers can understand the page. In Oxygen, you can easily change the tags of a div for example.
+7. Using divs to create lists - On the main div that contains the list, use a custom "ul" tag, and for each div make the tag a custom "li". Alternatively, you can use Rich Text module and insert the line items there, but the only downside of this is that it is hard to create an icon list.
+8. Pixels instead of relative units - &#x20;
 
 
 
