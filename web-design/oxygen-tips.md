@@ -21,10 +21,13 @@ Source: [https://www.youtube.com/watch?v=FgjO4fJybZs\&t=13s](https://www.youtube
 9. Improper heading levels - If you want to make a heading smaller, lower the REM.. do NOT set the heading level to something lower as that will mess up SEO.
 10. Setting heading size in global settings - In Oxygen, the problem with this is that you have no control of how responsive the text will be on mobile vs desktop. Instead, make classes for each heading and change the REM for each breakpoint. Alternatively, use a paid plugin like: [https://automaticcss.com/](https://automaticcss.com/)
 11. Static images - Image URL vs Media Library.. typically you want to choose a size for the photo such as "medium" to keep the size small. Additionally, if you use SRCSET ([https://www.youtube.com/watch?v=0jc74V5wYRk](https://www.youtube.com/watch?v=0jc74V5wYRk)) images it will automatically load smaller images if it detects the device size only requires that size.
-12. Background vs Real images - do not use background images if the image is important because there is no SEO value and screen readers do not see it.
-13. Not removing pagination - people try to hide the pagination button with DISPLAY: none, but this still gets indexed and that is bad.
-14. Not using custom post types for queryable items - create custom post types similar to how WooCommerce creates Products
+12. Background vs Real images - Do not use background images if the image is important because there is no SEO value and screen readers do not see it.
+13. Not removing pagination - People try to hide the pagination button with DISPLAY: none, but this still gets indexed and that is bad.
+14. Not using custom post types for queryable items - Create custom post types similar to how WooCommerce creates Products
 15. No 404 template
+16. Global colors managed by name - Do NOT go into global colors and name colors based off what the color is, but rather what it represents. For Example: Red vs Primary. In Oxygen, you can not change the name of the global color.
+17. Writing CSS in modules - If you do this, be sure to write comments so you know why you did it.
+18. Using Oxygen to create blog posts
 
 
 
