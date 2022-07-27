@@ -13,11 +13,12 @@ TRY..CATCH only catches medium level SQL errors!
   * "No matter what kind of error occurs, bail the whole thing out"
   * This method catches **almost** anything
 
-![](<../.gitbook/assets/image (1).png>)
-
-* In the above image, you still want to be sure to return errors to the client with **THROW** or **RAISERROR**&#x20;
-
 ![](../.gitbook/assets/image.png)
+
+* In the above image, you still want to be sure to return errors to the client with **THROW** or **RAISERROR**
+  * RAISERROR is more powerful, but THROW is easier to implement&#x20;
+
+![](<../.gitbook/assets/image (1).png>)
 
 
 
