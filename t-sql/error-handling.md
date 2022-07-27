@@ -18,6 +18,16 @@ TRY..CATCH only catches medium level SQL errors!
 * In the above image, you still want to be sure to return errors to the client with **THROW** or **RAISERROR**
   * RAISERROR is more powerful, but THROW is easier to implement&#x20;
 
+![](<../.gitbook/assets/image (1) (1).png>)
+
+
+
+### Debugging
+
+Table variables ignore ROLLBACK, which make them perfect for debugging&#x20;
+
+![](<../.gitbook/assets/image (2).png>)
+
 ![](<../.gitbook/assets/image (1).png>)
 
 
