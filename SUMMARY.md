@@ -18,3 +18,7 @@
 ## 💻 Web Design
 
 * [Oxygen Tips](web-design/oxygen-tips.md)
+
+## Azure
+
+* [AZ-900](azure/az-900.md)
