@@ -6,7 +6,7 @@ description: Welcome to Dill's Public Knowledge Base.
 
 ### Data Dill AKA Dylan Janszen
 
-Born and raised in Ohio, I went to school at the University of Cincinnati where I earned my Bachelor's degree in Information Systems and Marketing. Growing up I liked to play video games, which naturally led to me becoming an IT nerd obsessed with data. Currently, I work at a Fortune 500 company called [<mark style="color:blue;">Total Quality Logistics</mark>](https://www.tql.com/) where I spend my days writing T-SQL/Powershell and tuning queries mostly. After work, I like to boat and build custom FPV drones... [<mark style="color:blue;">enjoy</mark>](https://www.youtube.com/watch?v=MYlauNckL3U)<mark style="color:blue;">!</mark>
+Born and raised in Ohio, I went to school at the University of Cincinnati where I earned my Bachelor's degree in Information Systems and Marketing. Growing up I liked to play video games, which naturally led to me becoming an IT nerd obsessed with data. Currently, I work at a Fortune 500 company called [<mark style="color:blue;">Total Quality Logistics</mark>](https://www.tql.com/) where I spend my days writing T-SQL/Powershell and tuning queries. After work, I like to boat and build custom FPV drones... [<mark style="color:blue;">enjoy</mark>](https://www.youtube.com/watch?v=MYlauNckL3U)<mark style="color:blue;">!</mark>
 
 
 

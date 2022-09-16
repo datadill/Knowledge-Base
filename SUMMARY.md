@@ -27,5 +27,5 @@
   * [Differences Between Cloud Service Categories](azure/az-900/differences-between-cloud-service-categories.md)
   * [Identify The Right Service Type](azure/az-900/identify-the-right-service-type.md)
   * [Differences Between Types of Cloud Computing](azure/az-900/differences-between-types-of-cloud-computing.md)
-  * [Page 4](azure/az-900/page-4.md)
+  * [Reliability and Predictability](azure/az-900/reliability-and-predictability.md)
   * [Page 5](azure/az-900/page-5.md)
