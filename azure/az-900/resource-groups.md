@@ -15,3 +15,4 @@ description: >-
 * Role Base Access Control (RBAC) is another good reason to use an RG
 * You can put policies on RGs, which are similar to guard rails
 * You can place a budget or spend limit on an RG
+* Sometimes you might have all your databases in the same RG so that the DBAs can easily manage that RG
