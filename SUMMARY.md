@@ -33,3 +33,4 @@
   * [Resource Groups](azure/az-900/resource-groups.md)
   * [Subscriptions](azure/az-900/subscriptions.md)
   * [Management Groups](azure/az-900/management-groups.md)
+  * [Azure Resource Manager](azure/az-900/azure-resource-manager.md)
