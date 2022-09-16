@@ -28,4 +28,4 @@
   * [Identify The Right Service Type](azure/az-900/identify-the-right-service-type.md)
   * [Differences Between Types of Cloud Computing](azure/az-900/differences-between-types-of-cloud-computing.md)
   * [Reliability and Predictability](azure/az-900/reliability-and-predictability.md)
-  * [Page 5](azure/az-900/page-5.md)
+  * [Regions and Region Pairs](azure/az-900/regions-and-region-pairs.md)
