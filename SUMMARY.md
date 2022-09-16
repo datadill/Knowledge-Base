@@ -21,4 +21,7 @@
 
 ## Azure
 
-* [AZ-900](azure/az-900.md)
+* [AZ-900 Cram](azure/az-900-cram/README.md)
+  * [Benefit of Cloud Computing](azure/az-900-cram/benefit-of-cloud-computing.md)
+  * [Page 3](azure/az-900-cram/page-3.md)
+  * [Page 4](azure/az-900-cram/page-4.md)
