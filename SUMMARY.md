@@ -31,5 +31,5 @@
   * [Regions and Region Pairs](azure/az-900/regions-and-region-pairs.md)
   * [Availability Zones](azure/az-900/availability-zones.md)
   * [Resource Groups](azure/az-900/resource-groups.md)
-  * [Page 4](azure/az-900/page-4.md)
-  * [Page 5](azure/az-900/page-5.md)
+  * [Subscriptions](azure/az-900/subscriptions.md)
+  * [Management Groups](azure/az-900/management-groups.md)
