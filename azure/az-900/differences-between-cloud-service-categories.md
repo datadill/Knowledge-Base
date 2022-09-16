@@ -51,5 +51,10 @@ PaaS Serverless
 * Typically event driven
 * This includes functions & logic apps (graphical flow/low-code)
 
+SaaS (Software as a Service)
+
+* The entire business function is delivered
+* Microsoft 365, Salesforce, etc
+
 
 
