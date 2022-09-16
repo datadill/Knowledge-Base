@@ -29,3 +29,4 @@
   * [Differences Between Types of Cloud Computing](azure/az-900/differences-between-types-of-cloud-computing.md)
   * [Reliability and Predictability](azure/az-900/reliability-and-predictability.md)
   * [Regions and Region Pairs](azure/az-900/regions-and-region-pairs.md)
+  * [Availability Zones](azure/az-900/availability-zones.md)
