@@ -25,4 +25,3 @@
   * [Benefit of Cloud Computing](azure/az-900/benefit-of-cloud-computing.md)
   * [CapEx, OpEx and Consumption-based](azure/az-900/capex-opex-and-consumption-based.md)
   * [Differences Between Cloud Service Categories](azure/az-900/differences-between-cloud-service-categories.md)
-  * [Identify The Right Service Type](azure/az-900/identify-the-right-service-type.md)
