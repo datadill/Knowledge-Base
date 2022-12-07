@@ -36,3 +36,22 @@ In order to fix this issue, you can break the query up into phases
 * Ex. In a CTE, go find the top 200 and ORDER BY, but only use the columns contained within an index.. only after that is done should you call back to the CTE and do your JOINs to get the wide columns previously left out via Key Lookups
 * When you cache the plan for the small date range and run it for the large one, the query still finishes fast, but the SORT spils to disk.. but.. that doesn't really matter
 * When you cache the plan for the large date range and run it for the small one, the query is still fast, but it now goes parallel
+
+From Brent:
+
+Fixing parameter sniffing with indexes is all about giving SQL Server a narrower copy of the data to reduce the blast radius.
+
+Sometimes we have to encourage SQL Server to use the index by breaking the work up into different phases.
+
+WE STILL HAVE PARAMETER SNIFFING. These plans can have different:
+
+* Parallelism
+* Memory grants
+
+But they will at least look CLOSER than they looked before, and it may not matter AS MUCH which one goes in first.
+
+If your biggest challenge in a parameter sniffing problem is deciding between an index seek vs key lookup, your goal is to reduce the number of key lookups that SQL Server is forced to do. Give it enough in the index to let it do the filtering necessary.
+
+The index helps you find the rows you want.
+
+Once you've found the rows you want, 100-10,000 key lookups isn't a big deal at all (and the numbers may go even higher on bigger databases.) Although if someone says they want more than 10,000 rows on a single report, I'm like look, buddy, it's time to do table scans.
