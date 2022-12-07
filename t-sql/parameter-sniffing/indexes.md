@@ -56,4 +56,10 @@ The index helps you find the rows you want.
 
 Once you've found the rows you want, 100-10,000 key lookups isn't a big deal at all (and the numbers may go even higher on bigger databases.) Although if someone says they want more than 10,000 rows on a single report, I'm like look, buddy, it's time to do table scans.
 
-If your problem is choosing between TWO DIFFERENT INDEXES on the same table then index tuning alone will not help
+If the biggest problem you're trying to solve is the choice between an index seek + key lookup versus a table scan, your goal is to find the parts of the filtering & sorting that require key lookups, and see if you can move those to the index instead.
+
+Even the index alone may not cut it: if we can't fully cover the query, we may need to break the query into phases so that we can do a sort before we do a key lookup.
+
+If the biggest problem is choosing between two indexes on the same table, index tuning can help, but it's probably not going to be the only solution by itself. We're probably also going to have to introduce branching logic or a recompile hint to let ourselves get different query plans for different sets of parameters.
+
+If the biggest problem you're trying to solve is which table to process first because different parameters should focus on different tables, indexes alone won't be enough.
