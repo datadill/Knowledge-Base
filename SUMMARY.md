@@ -7,6 +7,7 @@
 * [❌ Error Handling](t-sql/error-handling.md)
 * [🧀 Parameter Sniffing](t-sql/parameter-sniffing.md)
   * [Indexes](t-sql/parameter-sniffing/indexes.md)
+  * [Query Hints](t-sql/parameter-sniffing/query-hints.md)
 
 ## 💸 Personal Finance
 
