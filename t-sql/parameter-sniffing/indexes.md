@@ -55,3 +55,5 @@ If your biggest challenge in a parameter sniffing problem is deciding between an
 The index helps you find the rows you want.
 
 Once you've found the rows you want, 100-10,000 key lookups isn't a big deal at all (and the numbers may go even higher on bigger databases.) Although if someone says they want more than 10,000 rows on a single report, I'm like look, buddy, it's time to do table scans.
+
+If your problem is choosing between TWO DIFFERENT INDEXES on the same table then index tuning alone will not help
