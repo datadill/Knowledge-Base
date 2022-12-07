@@ -8,6 +8,7 @@
 * [🧀 Parameter Sniffing](t-sql/parameter-sniffing.md)
   * [Indexes](t-sql/parameter-sniffing/indexes.md)
   * [Query Hints](t-sql/parameter-sniffing/query-hints.md)
+  * [RECOMPILE](t-sql/parameter-sniffing/recompile.md)
 
 ## 💸 Personal Finance
 
