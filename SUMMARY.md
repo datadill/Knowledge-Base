@@ -5,7 +5,8 @@
 ## 💻 T-SQL
 
 * [❌ Error Handling](t-sql/error-handling.md)
-* [🧀 Parameter Sniffing](t-sql/parameter-sniffing.md)
+* [🧀 Parameter Sniffing](t-sql/parameter-sniffing/README.md)
+  * [Indexes](t-sql/parameter-sniffing/indexes.md)
 
 ## 💸 Personal Finance
 
