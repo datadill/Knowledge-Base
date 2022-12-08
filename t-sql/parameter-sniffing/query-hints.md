@@ -22,3 +22,4 @@ The above query gets an excellent plan when they each use their own respective i
 * You can use hints to help SQL choose the right index, but if you hint with the name and the index gets renamed then the query will start to fail
   * Instead, you can trick SQL into thinking Score is selective with OPTION (OPTIMIZE FOR (@MinimumScore = xxxx))
     * This number is difficult to get right as you don't want to make the situation worse
+    * If you do utilize this hint, try to OPTIMIZE for as few parameters as possible to reduce potential tech debt
