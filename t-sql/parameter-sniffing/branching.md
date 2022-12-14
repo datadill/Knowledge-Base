@@ -58,3 +58,38 @@ GO
 * In the above code, adding IF @Reputation = 1 adds technical debt
 
 Traffic Cop is another solution to achieve branching that allows you to have 2 separate procs with the exact same code, but each proc has their own execution plan
+
+* In order to try and find big/small data, you can run a COUNT(\*) on the primary table to see how many records might be returned, but the issue with this approach is that you are counting from a table every single time
+  * To get around this, you can use a temp table on the inner proc that is generated from the outer proc so that you aren't doing unnecessary work:
+
+```sql
+CREATE OR ALTER PROC dbo.usp_RptUsersByReputation_Joins @Reputation INT AS
+BEGIN
+	CREATE TABLE #MatchingUsers (Id INT);
+	INSERT INTO #MatchingUsers (Id)
+		SELECT Id
+		FROM dbo.Users
+		WHERE Reputation = @Reputation;
+
+	IF 10000 < (SELECT COUNT(*) FROM #MatchingUsers)
+		EXEC usp_RptUsersByReputation_Joins_BigData @Reputation = @Reputation;
+	ELSE
+		EXEC usp_RptUsersByReputation_Joins_SmallData @Reputation = @Reputation;
+END
+GO
+
+/* Because then you can use the temp table in the child stored procs: */
+CREATE OR ALTER PROC dbo.usp_RptUsersByReputation_Joins_BigData @Reputation INT AS
+BEGIN
+	SELECT TOP 1000 *
+	FROM #MatchingUsers m
+		INNER JOIN dbo.Users u ON m.Id = u.Id
+		INNER JOIN dbo.Posts p ON u.Id = p.OwnerUserId
+		INNER JOIN dbo.Comments c ON p.Id = c.PostId
+		INNER JOIN dbo.Users uCommenter ON c.UserId = uCommenter.Id
+		INNER JOIN dbo.Badges b ON uCommenter.Id = b.UserId
+	WHERE u.Reputation = @Reputation
+	ORDER BY u.DisplayName;
+END
+GO
+```
