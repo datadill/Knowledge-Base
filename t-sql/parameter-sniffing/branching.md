@@ -60,7 +60,8 @@ GO
 Traffic Cop is another solution to achieve branching that allows you to have 2 separate procs with the exact same code, but each proc has their own execution plan
 
 * In order to try and find big/small data, you can run a COUNT(\*) on the primary table to see how many records might be returned, but the issue with this approach is that you are counting from a table every single time
-  * To get around this, you can use a temp table on the inner proc that is generated from the outer proc so that you aren't doing unnecessary work:
+  * To get around this, you can use a temp table on the inner proc that is generated from the outer proc so that you aren't doing unnecessary work
+    * _Not shown below, but you could also put @@ROWCOUNT below the INSERT INTO #MatchingUsers to avoid the SELECT COUNT(\*)_
 
 ```sql
 CREATE OR ALTER PROC dbo.usp_RptUsersByReputation_Joins @Reputation INT AS
