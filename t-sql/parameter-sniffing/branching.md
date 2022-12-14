@@ -39,6 +39,7 @@ GO
 
 * The above still gets sniffed because the text is the same
   * In order to fix this, we can use comment injection to change the text of the query
+    * _Not shown below, but it is best to put the comment at the beginning of the query because otherwise SQL will not show it in the plan cache as it truncates all comments AFTER a query is finished executing_
 
 ```sql
 CREATE OR ALTER PROC dbo.usp_RptUsersByReputation @Reputation INT AS
