@@ -1,6 +1,6 @@
 # Query Hints
 
-```
+```sql
 /* In the index-tuning module, we hit a wall when we tried to use index tuning
 alone to solve a tough choice between two indexes on this proc: */
 CREATE OR ALTER PROC dbo.usp_TopScoringPostsByDateAndScore

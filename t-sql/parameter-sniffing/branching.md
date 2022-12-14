@@ -1,6 +1,6 @@
 # Branching
 
-```
+```sql
 CREATE OR ALTER PROC dbo.usp_RptUsersByReputation @Reputation INT AS
 BEGIN
 	SELECT TOP 1000 *
@@ -21,3 +21,36 @@ EXEC usp_RptUsersByReputation @Reputation = 1 WITH RECOMPILE;
   * When you cache it the other way around, the small query runs fine, but the large one takes forever because it doesn't go parallel, it does key lookups, and it doesn't have enough memory
     * This indicates that there is no one single plan that will solve this probem
   * Branching with IF statement does **not** work
+
+
+
+**Dynamic SQL**
+
+```sql
+CREATE OR ALTER PROC dbo.usp_RptUsersByReputation @Reputation INT AS
+BEGIN
+	DECLARE @StringToExecute NVARCHAR(4000) = N'SELECT TOP 1000 * FROM dbo.Users
+		WHERE Reputation = @Reputation
+		ORDER BY DisplayName;';
+	EXEC sp_executesql @StringToExecute, N'@Reputation INT', @Reputation;
+END
+GO
+```
+
+* The above still gets sniffed because the text is the same
+  * In order to fix this, we can use comment injection to change the text of the query
+
+```sql
+CREATE OR ALTER PROC dbo.usp_RptUsersByReputation @Reputation INT AS
+BEGIN
+	DECLARE @StringToExecute NVARCHAR(4000) = N'SELECT TOP 1000 * FROM dbo.Users
+		WHERE Reputation = @Reputation
+		ORDER BY DisplayName;';
+
+	IF @Reputation = 1
+		SET @StringToExecute = @StringToExecute + N' /* Big data */';
+
+	EXEC sp_executesql @StringToExecute, N'@Reputation INT', @Reputation;
+END
+GO
+```
