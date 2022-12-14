@@ -93,3 +93,13 @@ BEGIN
 END
 GO
 ```
+
+What to take away from this demo:
+
+* All of the code in a batch gets compiled at once initially.
+* If you want a different plan, you have to:
+  * Ask for it - like with a RECOMPILE hint
+  * Change a lot of data, forcing stats to update
+  * Postpone compilation for part of the query: (like build a child stored procedure or dynamic SQL)
+  * Comment injection can be super powerful and low maintenance
+* But when you do any of the above, you're building technical debt: if the data distribution changes over time, you may need to revisit the triggers you used to spawn the branching logic.
