@@ -1,6 +1,6 @@
 # Indexes
 
-```
+```sql
 CREATE OR ALTER PROC dbo.usp_TopScoringPostsByDate
 	@StartDate DATETIME, @EndDate DATETIME AS
 BEGIN

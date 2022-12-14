@@ -54,3 +54,7 @@ BEGIN
 END
 GO
 ```
+
+* In the above code, adding IF @Reputation = 1 adds technical debt
+
+Traffic Cop is another solution to achieve branching that allows you to have 2 separate procs with the exact same code, but each proc has their own execution plan
