@@ -11,6 +11,7 @@
   * [RECOMPILE](t-sql/parameter-sniffing/recompile.md)
   * [Branching](t-sql/parameter-sniffing/branching.md)
   * [Memory Grants](t-sql/parameter-sniffing/memory-grants.md)
+  * [Summary](t-sql/parameter-sniffing/summary.md)
 
 ## 💸 Personal Finance
 
