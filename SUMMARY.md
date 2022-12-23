@@ -10,6 +10,7 @@
   * [Query Hints](t-sql/parameter-sniffing/query-hints.md)
   * [RECOMPILE](t-sql/parameter-sniffing/recompile.md)
   * [Branching](t-sql/parameter-sniffing/branching.md)
+  * [Memory Grants](t-sql/parameter-sniffing/memory-grants.md)
 
 ## 💸 Personal Finance
 
