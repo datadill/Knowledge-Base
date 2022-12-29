@@ -12,6 +12,7 @@
   * [Branching](t-sql/parameter-sniffing/branching.md)
   * [Memory Grants](t-sql/parameter-sniffing/memory-grants.md)
   * [Summary](t-sql/parameter-sniffing/summary.md)
+  * [Bonus](t-sql/parameter-sniffing/bonus.md)
 
 ## 💸 Personal Finance
 
