@@ -15,3 +15,5 @@ WHERE PostTypeID = '2' /*Answer*/
 </code></pre>
 
 * In the first example above, SQL does SHOW\_STATISTICS on an index on Posts for the PostTypeID, but it uses the density vector instead of building a plan for the PostTypeID we care about, which is 2 (answer)
+* To fix this, you can declare a variable called @PostTypeID and then simply select the PostTypeID into the variable and then use that variable in the WHERE clause of the query
+  * In order for SQL Server to build the appropriate plan that sniffs the variable, you will need to use OPTION(RECOMPILE) on the query
