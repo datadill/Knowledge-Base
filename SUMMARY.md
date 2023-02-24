@@ -48,3 +48,4 @@
   * [Public/Private Endpoints](azure/az-900/public-private-endpoints.md)
   * [Benefits and Usage of Storage Accounts](azure/az-900/benefits-and-usage-of-storage-accounts.md)
   * [Benefits and Usage of Database Resources](azure/az-900/benefits-and-usage-of-database-resources.md)
+  * [Data Movement and Migration Options](azure/az-900/data-movement-and-migration-options.md)
