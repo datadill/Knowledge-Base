@@ -46,3 +46,4 @@
   * [Benefits and Usage of Core Compute Resources](azure/az-900/benefits-and-usage-of-core-compute-resources.md)
   * [Benefits and Usage of Core Network Resources](azure/az-900/benefits-and-usage-of-core-network-resources.md)
   * [Public/Private Endpoints](azure/az-900/public-private-endpoints.md)
+  * [Benefits and Usage of Storage Accounts](azure/az-900/benefits-and-usage-of-storage-accounts.md)
