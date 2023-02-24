@@ -48,3 +48,10 @@ Serverless
   * Functions can run inside of an app service plans
 * Usually these are event driven and charged by usage
 * Functions are writing code whereas logic apps uses drag/drop GUI
+
+Azure Virtual Desktop
+
+* Desktop as a service offering
+* the management plane is once again taken care of for you
+* You only get access to the hosts that people connect to
+* Provides you with a full desktop experience or it can publish particular applications
