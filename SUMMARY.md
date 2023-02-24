@@ -44,3 +44,4 @@
   * [Azure ARC](azure/az-900/azure-arc.md)
   * [Resources Required for VM](azure/az-900/resources-required-for-vm.md)
   * [Benefits and Usage of Core Compute Resources](azure/az-900/benefits-and-usage-of-core-compute-resources.md)
+  * [Benefits and Usage of Core Network Resources](azure/az-900/benefits-and-usage-of-core-network-resources.md)
