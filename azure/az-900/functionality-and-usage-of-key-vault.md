@@ -21,8 +21,5 @@ Permissions
 
 * Access can be controlled via a policy, but it grants access to the entire vault
 * RBAC (role based access control) allows you to grant permissions to specific objects
-
-
-
-* Managed Identity is tied to a particular instance of a resource and can let an application authenticate to the key vault&#x20;
-  * You would provide the apps identity, permissions to the key vault
+* A classic chicken and egg issue is that an app might try and get credentials, but it needs to authenticate to the key vault first
+  * Managed identities provide an automatically managed identity in Azure Active Directory (Azure AD) for applications to use when connecting to resources that support Azure AD authentication. Applications can use managed identities to obtain Azure AD tokens without having to manage any credentials.
