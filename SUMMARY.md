@@ -55,3 +55,4 @@
   * [Benefits and Usage of Serverless Technologies](azure/az-900/benefits-and-usage-of-serverless-technologies.md)
   * [Benefits and Usage of DevOps Technologies](azure/az-900/benefits-and-usage-of-devops-technologies.md)
   * [Functionality of Azure Management Solutions](azure/az-900/functionality-of-azure-management-solutions.md)
+  * [Functionality and Usage of Azure Advisor](azure/az-900/functionality-and-usage-of-azure-advisor.md)
