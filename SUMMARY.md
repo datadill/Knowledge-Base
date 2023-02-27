@@ -53,3 +53,5 @@
   * [Benefits and Usage of Big Data and Analytics Services](azure/az-900/benefits-and-usage-of-big-data-and-analytics-services.md)
   * [Benefits and Usage of AI Services](azure/az-900/benefits-and-usage-of-ai-services.md)
   * [Benefits and Usage of Serverless Technologies](azure/az-900/benefits-and-usage-of-serverless-technologies.md)
+  * [Benefits and Usage of DevOps Technologies](azure/az-900/benefits-and-usage-of-devops-technologies.md)
+  * [Functionality of Azure Management Solutions](azure/az-900/functionality-of-azure-management-solutions.md)
