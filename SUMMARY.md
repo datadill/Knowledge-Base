@@ -58,3 +58,5 @@
   * [Functionality and Usage of Azure Advisor](azure/az-900/functionality-and-usage-of-azure-advisor.md)
   * [Functionality and Usage of ARM Templates](azure/az-900/functionality-and-usage-of-arm-templates.md)
   * [Functionality and Usage of Azure Monitor](azure/az-900/functionality-and-usage-of-azure-monitor.md)
+  * [Functionality and Usage of Azure Service Health](azure/az-900/functionality-and-usage-of-azure-service-health.md)
+  * [Functionality of Microsoft Defender for Cloud](azure/az-900/functionality-of-microsoft-defender-for-cloud.md)
