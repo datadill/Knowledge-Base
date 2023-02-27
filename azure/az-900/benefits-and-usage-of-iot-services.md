@@ -34,4 +34,4 @@ Azure Sphere
 
 * Provides end to end security
 * Microsoft licenses the software for manufacturers to install Azure Sphere on a micro controller unit (IoT device)
-*
+
