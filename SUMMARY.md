@@ -51,3 +51,4 @@
   * [Data Movement and Migration Options](azure/az-900/data-movement-and-migration-options.md)
   * [Benefits and Usage of IoT Services](azure/az-900/benefits-and-usage-of-iot-services.md)
   * [Benefits and Usage of Big Data and Analytics Services](azure/az-900/benefits-and-usage-of-big-data-and-analytics-services.md)
+  * [Benefits and Usage of AI Services](azure/az-900/benefits-and-usage-of-ai-services.md)
