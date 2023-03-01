@@ -80,3 +80,4 @@
   * [Azure Blueprints](azure/az-900/azure-blueprints.md)
   * [Describe Microsoft Privacy Statement, OST and DPA](azure/az-900/describe-microsoft-privacy-statement-ost-and-dpa.md)
   * [Purpose of Trust Center and Azure Compliance Documentation](azure/az-900/purpose-of-trust-center-and-azure-compliance-documentation.md)
+  * [Purpose of Azure Sovereign Regions](azure/az-900/purpose-of-azure-sovereign-regions.md)
