@@ -75,3 +75,4 @@
   * [Functionality and Usage of RBAC](azure/az-900/functionality-and-usage-of-rbac.md)
   * [Functionality and Usage of Resource Locks](azure/az-900/functionality-and-usage-of-resource-locks.md)
   * [Functionality and Usage of Tags](azure/az-900/functionality-and-usage-of-tags.md)
+  * [Functionality and Usage of Azure Policy](azure/az-900/functionality-and-usage-of-azure-policy.md)
