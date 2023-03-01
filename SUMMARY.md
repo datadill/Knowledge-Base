@@ -78,3 +78,4 @@
   * [Functionality and Usage of Azure Policy](azure/az-900/functionality-and-usage-of-azure-policy.md)
   * [Governance Hierarchy Constructs](azure/az-900/governance-hierarchy-constructs.md)
   * [Azure Blueprints](azure/az-900/azure-blueprints.md)
+  * [Describe Microsoft Privacy Statement, OST and DPA](azure/az-900/describe-microsoft-privacy-statement-ost-and-dpa.md)
