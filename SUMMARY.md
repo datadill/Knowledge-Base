@@ -72,3 +72,4 @@
   * [Functionality and Usage of Azure AD](azure/az-900/functionality-and-usage-of-azure-ad.md)
   * [Microsoft Entra Overview](azure/az-900/microsoft-entra-overview.md)
   * [Functionality of Conditional Access, MFA and SSO](azure/az-900/functionality-of-conditional-access-mfa-and-sso.md)
+  * [Functionality and Usage of RBAC](azure/az-900/functionality-and-usage-of-rbac.md)
