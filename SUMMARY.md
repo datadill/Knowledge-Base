@@ -65,3 +65,4 @@
   * [Azure Dedicated Host](azure/az-900/azure-dedicated-host.md)
   * [Defense in Depth](azure/az-900/defense-in-depth.md)
   * [Describe the Concept of Zero Trust](azure/az-900/describe-the-concept-of-zero-trust.md)
+  * [Functionality and Usage of NSGs](azure/az-900/functionality-and-usage-of-nsgs.md)
