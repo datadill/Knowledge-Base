@@ -83,3 +83,4 @@
   * [Purpose of Azure Sovereign Regions](azure/az-900/purpose-of-azure-sovereign-regions.md)
   * [Factors That Affect Costs](azure/az-900/factors-that-affect-costs.md)
   * [Factors to Reduce Cost](azure/az-900/factors-to-reduce-cost.md)
+  * [Functionality and Usage of Azure Cost Management](azure/az-900/functionality-and-usage-of-azure-cost-management.md)
