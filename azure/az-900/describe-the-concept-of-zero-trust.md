@@ -18,3 +18,9 @@ description: >-
 
 * Assume bad actors on the network at all times
 
+
+
+Look at the context of the request to determine the overall risk and then control what you will let that service actually do
+
+* Azure AD Premium provides conditional access control
+
