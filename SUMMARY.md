@@ -69,3 +69,4 @@
   * [Functionality and Usage of Azure Firewall](azure/az-900/functionality-and-usage-of-azure-firewall.md)
   * [Functionality and Usage of Azure DDoS Protection](azure/az-900/functionality-and-usage-of-azure-ddos-protection.md)
   * [Explain Authentication and Authorization](azure/az-900/explain-authentication-and-authorization.md)
+  * [Functionality and Usage of Azure AD](azure/az-900/functionality-and-usage-of-azure-ad.md)
