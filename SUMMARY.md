@@ -82,3 +82,4 @@
   * [Purpose of Trust Center and Azure Compliance Documentation](azure/az-900/purpose-of-trust-center-and-azure-compliance-documentation.md)
   * [Purpose of Azure Sovereign Regions](azure/az-900/purpose-of-azure-sovereign-regions.md)
   * [Factors That Affect Costs](azure/az-900/factors-that-affect-costs.md)
+  * [Factors to Reduce Cost](azure/az-900/factors-to-reduce-cost.md)
