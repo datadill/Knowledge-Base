@@ -20,7 +20,7 @@ Availability Zones help with a facility level failure
 
 * Not every region support availability zones, but most do
 * Usually there are 3 availability zones to pick from
-  * 1,2, and 3 does not necessarily indicate building #1, building #2, etc
+  * 1,2, and 3 does not necessarily indicate building #1, building #2, etc, but it does guarantee different buildings
 * A subscription is a billing boundary as well as a resource boundary
   * For each subscription you will see AZ1, AZ2, AZ3
     * These zones may be unique to this subscription
