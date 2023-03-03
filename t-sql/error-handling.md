@@ -13,7 +13,7 @@ TRY..CATCH only catches medium level SQL errors!
   * "No matter what kind of error occurs, bail the whole thing out"
   * This method catches **almost** anything
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (2).png>)
 
 * In the above image, you still want to be sure to return errors to the client with **THROW** or **RAISERROR**
   * RAISERROR is more powerful, but THROW is easier to implement&#x20;
@@ -26,7 +26,7 @@ TRY..CATCH only catches medium level SQL errors!
 
 Table variables ignore ROLLBACK, which make them perfect for debugging&#x20;
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
 ![](<../.gitbook/assets/image (1).png>)
 
