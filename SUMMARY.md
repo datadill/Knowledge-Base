@@ -85,5 +85,5 @@
   * [Factors to Reduce Cost](azure/az-900/factors-to-reduce-cost.md)
   * [Functionality and Usage of Azure Cost Management](azure/az-900/functionality-and-usage-of-azure-cost-management.md)
   * [Purpose of Service Level Agreements](azure/az-900/purpose-of-service-level-agreements.md)
-* [DP-900](azure/dp-900/README.md)
+* [DP-900](azure/dp-900.md)
   * [Study Cram](azure/dp-900/study-cram.md)

@@ -25,3 +25,5 @@ Semi-Structured Data
 * As data gets bigger, you want to be able to shard your data
   * Partition keys with an even distribution can help you shard the data effectively over logical partitions that will then separate over separate physical partitions&#x20;
 
+Unstructured Data
+
