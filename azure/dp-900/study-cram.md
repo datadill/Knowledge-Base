@@ -25,5 +25,36 @@ Semi-Structured Data
 * As data gets bigger, you want to be able to shard your data
   * Partition keys with an even distribution can help you shard the data effectively over logical partitions that will then separate over separate physical partitions&#x20;
 
-Unstructured Data
+Storage Accounts (BLOB)
+
+* Block - made up of a sequence of blocks up to 50,000
+* Page - good for random read/write access (512 byte pages)
+* Append - can't modify, but can append&#x20;
+  * ex. Logging
+
+Azure Files
+
+* SMB & NFS
+* Sync on-prem and cloud
+
+Cosmos DB
+
+* Multi region and multi write
+* Variable consistency
+  * Strong <-> Session <-> Eventual
+    * Strong - no matter where you are everyone sees the same data (multi write is not possible)
+* Multi API
+  * SQL, MongoDB, Document, Cassandra, etc&#x20;
+* Request Units pricing model
+  * Provisioned / autoscale/ serverless
+    * autoscale is usually better and more cost effective
+
+Microsoft Purview
+
+* What data is out there?
+  * Classify the data
+    * You can use expressions or you can utilize trainable classifiers which utilizes machine learning
+* Apply governance
+
+
 
