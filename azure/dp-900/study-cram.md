@@ -14,7 +14,7 @@ Control plane permissions do not mean you have permissions on the data plane
 Azure SQL DB Network connection
 
 * Azure SQL DB has a public IP that you are able to connect to via a DNS name
-* You can also create a vNet with a private endpoint so that anything on the vNet or connected to the endpoint can then connect to the database
+* You can also create a vNet with a private endpoint so that anything on the vNet or connected to the vNet can then connect to the database
   * If you are not on the vNet, you can connect via S2S VPN or peering via expressRoute
     * Then of course you need the proper database permissions&#x20;
 
