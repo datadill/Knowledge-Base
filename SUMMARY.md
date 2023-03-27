@@ -87,3 +87,4 @@
   * [Purpose of Service Level Agreements](azure/az-900/purpose-of-service-level-agreements.md)
 * [DP-900](azure/dp-900.md)
   * [Study Cram](azure/dp-900/study-cram.md)
+* [DP-300](azure/dp-300.md)
