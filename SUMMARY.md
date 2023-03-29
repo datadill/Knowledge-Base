@@ -87,4 +87,5 @@
   * [Purpose of Service Level Agreements](azure/az-900/purpose-of-service-level-agreements.md)
 * [DP-900](azure/dp-900.md)
   * [Study Cram](azure/dp-900/study-cram.md)
-* [DP-300](azure/dp-300.md)
+* [DP-300](azure/dp-300/README.md)
+  * [Deploy IaaS Soluton with Azure SQL](azure/dp-300/deploy-iaas-soluton-with-azure-sql.md)
