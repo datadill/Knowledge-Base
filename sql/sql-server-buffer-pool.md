@@ -10,11 +10,29 @@ SELECT \* FROM Foo WHERE Bar = 1&#x20;
 * goes through TDS (tabular data stream) no matter what engine you are using (e.g. ODBC) -> protocol layer -> Lexer / Parser (Lexer is concerned with words and parser looks at sentences), which creates a "parse tree" -> query optimizer -> query executor (could be waiting on CPU or resource\_semaphor) -> access methods -> buffer manager (we want to initiate some logical IO and if it is not found in buffer pool, it goes to disk and brings the page into the buffer pool using the BUF array to keep track of the pages we are pulling in) -> data page gets sent to client
   * When a SQL Server starts, it is quite aggressive with what it grabs into the buffer pool
 
+UPDATE Foo SET fname = 'p' WHERE Bar = 1
+
+![](<../.gitbook/assets/image (4).png>)
+
+* Go through all the normal steps and you eventually find the pages in the buffer pool
+  * You then need to interact with the transaction manager and start writing to the log to ensure durability
+    * The SQL Log Mgr will start writing to a log buffer (60kb in size)
+    * At the same time, the transaction manager is making modifications to the page in the buffer pool and will mark it as dirty
+    * Once the COMMIT is initiated, the log buffer will then go to the .ldf file
+      * Azure PaaS, under the covers it writes to a page server of some sort versus a transaction log
+      * Once the COMMIT is initiated and the log buffer has written to the durable storage, you are now complete even if the server goes down before replying to the client
+* Log buffer flush
+  * Log buffer is full (60KB)
+  * Commit transactions initiated
+    * Exception: delayed durability (can cause data loss, but if you have lots of tiny lil writes it can help).. It means that the commit statement does not trigger to log flush operation
+
+
+
 ![](../.gitbook/assets/image.png)
 
 
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (5).png>)
 
 * In a clustered index, the table is physically ordered, but the rows themselves could be anywhere on a page
   * at the bottom of the page is a slot array, which is indeed in physical order
