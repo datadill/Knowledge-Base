@@ -12,9 +12,9 @@ SELECT \* FROM Foo WHERE Bar = 1&#x20;
 
 UPDATE Foo SET fname = 'p' WHERE Bar = 1
 
-![](<../.gitbook/assets/image (4).png>)
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-* Go through all the normal steps and you eventually find the pages in the buffer pool
+* For the dpdate query above, go through all the normal steps and you eventually find the pages in the buffer pool
   * You then need to interact with the transaction manager and start writing to the log to ensure durability
     * The SQL Log Mgr will start writing to a log buffer (60kb in size)
     * At the same time, the transaction manager is making modifications to the page in the buffer pool and will mark it as dirty
@@ -73,4 +73,22 @@ Index Allocation Map (IAM)
     * XML, VARCHAR
   * ROW\_OVERFLOW\_DATA
     * Rows/columns that exceed 8060 bytes
+
+
+
+Some causes of wasted Bpool space?
+
+* HEAPs (in operation)
+* duplicats/redundant/unused indexes
+* Page splits
+* Is\_deleted BIT NOT NULL AKA soft deletes
+
+Easy wins?
+
+* Delete unused indexes
+* page compression
+  * For OLTP, not warehousing
+* columnstore compression
+
+
 
