@@ -25,14 +25,25 @@ UPDATE Foo SET fname = 'p' WHERE Bar = 1
   * Log buffer is full (60KB)
   * Commit transactions initiated
     * Exception: delayed durability (can cause data loss, but if you have lots of tiny lil writes it can help).. It means that the commit statement does not trigger to log flush operation
+*   Writing back to the database .mdf/.ndf (2 scenarios)
+
+    * CHECKPOINT
+      * To shorten database recovery
+      * Pages remain buffer pool
+    * Lazy writer (it is up all the time.. not so lazy!)
+      * Uses an LRU-k (least recently used) algorithm to remove pages from buffer pool
+      * If the pages are dirty they have to be written to disk otherwise just remove them
+      * If we need more space in memory then the warm pages will be removed next
+
+    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 
 
-![](../.gitbook/assets/image.png)
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 
 
-![](<../.gitbook/assets/image (5).png>)
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 * In a clustered index, the table is physically ordered, but the rows themselves could be anywhere on a page
   * at the bottom of the page is a slot array, which is indeed in physical order
