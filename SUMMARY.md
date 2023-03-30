@@ -4,15 +4,15 @@
 
 ## 💻 SQL&#x20;
 
-* [❌ Error Handling](sql/error-handling.md)
-* [🧀 Parameter Sniffing](sql/parameter-sniffing/README.md)
-  * [Indexes](sql/parameter-sniffing/indexes.md)
-  * [Query Hints](sql/parameter-sniffing/query-hints.md)
-  * [RECOMPILE](sql/parameter-sniffing/recompile.md)
-  * [Branching](sql/parameter-sniffing/branching.md)
-  * [Memory Grants](sql/parameter-sniffing/memory-grants.md)
-  * [Summary](sql/parameter-sniffing/summary.md)
-  * [Bonus](sql/parameter-sniffing/bonus.md)
+* [❌ Error Handling](t-sql/error-handling.md)
+* [🧀 Parameter Sniffing](t-sql/parameter-sniffing.md)
+  * [Indexes](t-sql/parameter-sniffing/indexes.md)
+  * [Query Hints](t-sql/parameter-sniffing/query-hints.md)
+  * [RECOMPILE](t-sql/parameter-sniffing/recompile.md)
+  * [Branching](t-sql/parameter-sniffing/branching.md)
+  * [Memory Grants](t-sql/parameter-sniffing/memory-grants.md)
+  * [Summary](t-sql/parameter-sniffing/summary.md)
+  * [Bonus](t-sql/parameter-sniffing/bonus.md)
 * [SQL Server Buffer Pool](sql/sql-server-buffer-pool.md)
 
 ## 💸 Personal Finance
