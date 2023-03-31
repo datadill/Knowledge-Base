@@ -25,7 +25,7 @@ UPDATE Foo SET fname = 'p' WHERE Bar = 1
   * Log buffer is full (60KB)
   * Commit transactions initiated
     * Exception: delayed durability (can cause data loss, but if you have lots of tiny lil writes it can help).. It means that the commit statement does not trigger to log flush operation
-*   Writing back to the database .mdf/.ndf (2 scenarios)
+*   Writing back to the database .mdf/.ndf (3 scenarios)
 
     * CHECKPOINT
       * To shorten database recovery
@@ -34,6 +34,8 @@ UPDATE Foo SET fname = 'p' WHERE Bar = 1
       * Uses an LRU-k (least recently used) algorithm to remove pages from buffer pool
       * If the pages are dirty they have to be written to disk otherwise just remove them
       * If we need more space in memory then the warm pages will be removed next
+    * Eager writer
+      * SELECT INTO, Bulk Insert, WriteText and UpdateText.
 
     <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
