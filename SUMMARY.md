@@ -26,6 +26,7 @@
 ## 💻 Web Design
 
 * [Oxygen Tips](web-design/oxygen-tips.md)
+* [Bricks Builder](web-design/bricks-builder.md)
 
 ## Azure
 
