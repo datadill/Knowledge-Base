@@ -50,6 +50,6 @@ Viewport Units
   * 60vw is similar to 60%, but instead of being relative to the parent it is 60% of the viewport
 * vh
 * vmin
-  * Ex. 60% of the smaller side so on a laptop that has a smaller y axis (screen size) a button with 60vmin will shrink vertically
+  * Ex. 60% of the smaller side so on a laptop that has a smaller y axis (screen size) a button with 60vmin will shrink vertically with the smallest size
 * vmax
   * opposite of vmin
