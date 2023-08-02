@@ -26,7 +26,7 @@
 ## 💻 Web Design
 
 * [Oxygen Tips](web-design/oxygen-tips.md)
-* [Bricks Builder](web-design/bricks-builder/README.md)
+* [Bricks Builder](web-design/bricks-builder.md)
   * [Static vs Relative Units](web-design/bricks-builder/static-vs-relative-units.md)
 
 ## Azure

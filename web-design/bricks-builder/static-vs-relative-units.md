@@ -21,3 +21,10 @@ REM
   * Need to consider font scaling for things like border, padding, etc
 
 EM
+
+* Relative to the element's calculated font size
+  * Think of it as a ratio (1.5rem = 1.5x the font size)
+* Best used in situations where things need to respond to changes in calculated font size (e.g. buttons)
+* Caution: EM units compound and are influenced by the font size of parent containers
+  * This is why the REM unit was introduced -- EMs are often undesirable as a relative unit
+* Don't use EMs for font sizes - it's what nightmares are made of!
