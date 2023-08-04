@@ -27,6 +27,7 @@
 
 * [Oxygen Tips](web-design/oxygen-tips.md)
 * [Bricks Builder](web-design/bricks-builder.md)
+  * [Discovery Call](web-design/bricks-builder/discovery-call.md)
   * [Utility vs Custom Classes](web-design/bricks-builder/utility-vs-custom-classes.md)
   * [Math Functions](web-design/bricks-builder/math-functions.md)
   * [Static vs Relative Units](web-design/bricks-builder/static-vs-relative-units.md)
