@@ -5,3 +5,7 @@
 * If you want to move a div all the way right, add margin left **auto**
 * If you are working on a header or footer and you want to load in your home page you can go into templates -> template settings -> populate content and load the page
 * You can size logos with width rem
+* 60-30-10 color guideline
+  * 60% - neutral ex. white, black, grey, etc)
+  * 30% - primary
+  * 10% - call to Action
