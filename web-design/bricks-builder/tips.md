@@ -10,3 +10,4 @@
   * 30% - primary
   * 10% - call to Action
 * Base color should not be pure black, but instead a slightly less dark shade such as #222222
+* If you are trying to round a video, put it into a container and then apply radius to the corners. You must then remove the overflow to cut off the edges.
