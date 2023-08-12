@@ -9,3 +9,4 @@
   * 60% - neutral ex. white, black, grey, etc)
   * 30% - primary
   * 10% - call to Action
+* Base color should not be pure black, but instead a slightly less dark shade such as #222222
