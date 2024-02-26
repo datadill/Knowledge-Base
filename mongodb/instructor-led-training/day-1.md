@@ -116,3 +116,29 @@ db.collection1.insertMany(friends)
           * In the above snippet, 3 records would be inserted, which includes "Jen"
 * Tip: mongo is indexed at 0
 
+If you have to Insert 200 documents, is it better to use insertMany or insertOne in a FOR loop?
+
+* insertMany is better because the network roundtrips are lessened
+
+
+
+* You can insert up to 100,000 documents or 48mb in a single trip
+
+
+
+#### Reading Data
+
+* db.customers.findOne({})
+  * Returns the first record
+* db.customers.findOne({name: "Andy Smith"})
+  * Strings are case-sensitive
+* db.customers.findOne({name: "Andy Smith", spend: 0})
+  * The above is an AND operation
+* db.customers.findOne({name: /smi/i, spend: 0})
+  * REGEX expressions work, but you should be using a text index or Atlas Search if you use Atlas assuming you do this operation frequently
+* db.customers.findOne({name: /smi/i, spend: 0.0000})
+  * For numerical values, regardless of precision, Mongodb will still return the spend for customers with a spend of 0
+  * In application code, you should use the proper data types as it will be mapped within Mongo
+
+
+
