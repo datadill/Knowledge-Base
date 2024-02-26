@@ -176,9 +176,21 @@ Looking for multiple documents?
     * The reason for this is because in Mongodb allows for 100 levels of nesting so it is more performant to just hash the document
     * In the real world, you would typically not use the above syntax, but rather would use the below syntax
     * **VERY IMPORTANT: querying on an embedded document like above will rehash every single document on the fly, it does not save this hash on an INSERT**
+    * **Embedded documents include arrays and nested documents**
   * db.people.find({"address.city": "Houston"})
     * when referencing a child field (nested document), you MUST have double quotes around the key in the JSON document in your FIND operation
+  * db.fun.find({hobbies: "rockets"})
+    * MongoDB will walk an array and return a document if rockets exists in the array
+  * db.fun.find({hobbies: \["rockets, "cars"]})
+    * Since this is an embedded document, it must be an exact match
+  * db.taxis.find({age: {$gt: 37} } )
+    * Operator documents are always prefixed with a $
+  * db.taxis.find({age: {$gt: 37}, plate: {$lt: 20, $lte: 50, $ne: 38, $in: \[40,44,45] } } )
+    * This operates in AND behavior
+    * operators can be on the same field as well
   *
+
+
 
 
 
