@@ -17,7 +17,8 @@
 
 ## 🖱️ MongoDB
 
-* [Instructor Led Training](mongodb/instructor-led-training.md)
+* [Instructor Led Training](mongodb/instructor-led-training/README.md)
+  * [Day 1](mongodb/instructor-led-training/day-1.md)
 
 ## 📣 Marketing
 
