@@ -150,53 +150,49 @@ Looking for multiple documents?
   * conversely, if you have 0, it will exclude just those fields
   * you can NOT mix and match inclusion/exclusion with ONE exception
     * You can explicitly exclude the \_id field while also including others
-    *
-    * db.customers.find({lastpurchase: null})
+* db.customers.find({lastpurchase: null})
   * Will return documents even where lastpurchase field does not exist as it implicitly defines the value is null
-  * db.customers.find({gibberish:null})
-    * Returns every single document
+* db.customers.find({gibberish:null})
+  * Returns every single document
   * find vs findOne
     * find will return a cursor that has a maximum of 100 documents or in some drivers, 16mb (C# is 48mb)
       * A lot of drivers will obfuscate this behavior and iterate through the cursor for you
     * If no documents are found, it will still return the object, but it will be empty
-  * db.customers.find({}).sort({age: -1}).skip(30).limit(10)
-    * Commands can be chained
-    * \-1 is descending
-    * order of chained operations does not matter, but in order to not confuse people, always write by **sort**, **skip**, and then **limit** for best practices
-      * You can change this behavior with an "aggregate query", but we have not yet learned what that is
-  * db.customers.find({}).sort({age: -1, plate: -1}).skip(30).limit(10)
-  * .count() vs .countDocuments() vs .countDocuments({})
-    * they should almost always be the same, but their is a VERY extreme edge case where you are dealing with ultra precise application and high frequency apps
-      * .countDocuments() is faster
-      * .count()&#x20;
-      * .countDocuments({}) with an empty document cheats and uses the metadata stats, but it could be off by +/- 1
-  * db.people.find({address: {city: "Houston"\}})
-    * This will work ONLY if the field names, field order, and values match identically because mongodb creates a blob of the document
-    * The reason for this is because in Mongodb allows for 100 levels of nesting so it is more performant to just hash the document
-    * In the real world, you would typically not use the above syntax, but rather would use the below syntax
-    * **VERY IMPORTANT: querying on an embedded document like above will rehash every single document on the fly, it does not save this hash on an INSERT**
-    * **Embedded documents include arrays and nested documents**
-  * db.people.find({"address.city": "Houston"})
-    * when referencing a child field (nested document), you MUST have double quotes around the key in the JSON document in your FIND operation
-  * db.fun.find({hobbies: "rockets"})
-    * MongoDB will walk an array and return a document if rockets exists in the array
-  * db.fun.find({hobbies: \["rockets, "cars"]})
-    * Since this is an embedded document, it must be an exact match
-  * db.taxis.find({age: {$gt: 37} } )
-    * Operator documents are always prefixed with a $
-  * db.taxis.find({age: {$gt: 37}, plate: {$lt: 20, $lte: 50, $ne: 38, $in: \[40,44,45] } } )
-    * This operates in AND behavior
-    * operators can be on the same field as well
-  * db.pets.find({$or: \[{species: "cat", color: "black"},{species: "dog", color: "brown"}] })
-    * nesting boolean logic is valid
-    * ORDER within the query document does not matter unless you are referencing embedded documents
-    * ORDER within the OR array does matter in the sense that the query will stop executing when the first condition is satisfied
-      * In terms of performance, it may be faster for your query to start with the condition that is more frequent
-  * db.pets.find({color: {$not: {$eg: "Brown" } } })&#x20;
-    * Find all documents where color is not brown
-    * The same as: db.pets.find({color: {$ne: "Brown" } } )
-    * $not is considered an Operator document
-*
+* db.customers.find({}).sort({age: -1}).skip(30).limit(10)
+  * Commands can be chained
+  * \-1 is descending
+  * order of chained operations does not matter, but in order to not confuse people, always write by **sort**, **skip**, and then **limit** for best practices
+    * You can change this behavior with an "aggregate query", but we have not yet learned what that is
+* db.customers.find({}).sort({age: -1, plate: -1}).skip(30).limit(10)
+* .count() vs .countDocuments() vs .countDocuments({})
+  * they should almost always be the same, but their is a VERY extreme edge case where you are dealing with ultra precise application and high frequency apps
+    * .countDocuments() is faster
+    * .count()&#x20;
+    * .countDocuments({}) with an empty document cheats and uses the metadata stats, but it could be off by +/- 1
+* db.people.find({address: {city: "Houston"\}})
+  * This will work ONLY if the field names, field order, and values match identically because mongodb creates a blob of the document
+  * The reason for this is because in Mongodb allows for 100 levels of nesting so it is more performant to just hash the document
+  * In the real world, you would typically not use the above syntax, but rather would use the below syntax
+  * **VERY IMPORTANT: querying on an embedded document like above will rehash every single document on the fly, it does not save this hash on an INSERT**
+  * **Embedded documents include arrays and nested documents**
+* db.people.find({"address.city": "Houston"})
+  * when referencing a child field (nested document), you MUST have double quotes around the key in the JSON document in your FIND operation
+* db.fun.find({hobbies: "rockets"})
+  * MongoDB will walk an array and return a document if rockets exists in the array
+* db.fun.find({hobbies: \["rockets, "cars"]})
+  * Since this is an embedded document, it must be an exact match
+* db.taxis.find({age: {$gt: 37} } )
+  * Operator documents are always prefixed with a $
+* db.taxis.find({age: {$gt: 37}, plate: {$lt: 20, $lte: 50, $ne: 38, $in: \[40,44,45] } } )
+  * This operates in AND behavior
+  * operators can be on the same field as well
+* db.pets.find({$or: \[{species: "cat", color: "black"},{species: "dog", color: "brown"}] })
+  * nesting boolean logic is valid
+  * ORDER within the query document does not matter unless you are referencing embedded documents
+  * ORDER within the OR array does matter in the sense that the query will stop executing when the first condition is satisfied
+    * In terms of performance, it may be faster for your query to start with the condition that is more frequent
+
+
 
 
 
