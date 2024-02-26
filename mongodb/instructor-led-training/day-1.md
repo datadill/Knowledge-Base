@@ -175,8 +175,10 @@ Looking for multiple documents?
     * This will work ONLY if the field names, field order, and values match identically because mongodb creates a blob of the document
     * The reason for this is because in Mongodb allows for 100 levels of nesting so it is more performant to just hash the document
     * In the real world, you would typically not use the above syntax, but rather would use the below syntax
+    * **VERY IMPORTANT: querying on an embedded document like above will rehash every single document on the fly, it does not save this hash on an INSERT**
   * db.people.find({"address.city": "Houston"})
     * when referencing a child field (nested document), you MUST have double quotes around the key in the JSON document in your FIND operation
+  *
 
 
 
