@@ -111,7 +111,8 @@ db.collection1.insertMany(friends)
     * This is the default insertMany behavior
       * Atomicity is at the document level
       * You can do multi-document transactions, but there are tradeoffs!
-      * db.collection2.insertMany(friends, {ordered: false} )
-        * In the above snippet, 3 records would be inserted, which includes "Jen"
+      * It is also possible to modify the default behavior
+        * db.collection2.insertMany(friends, {ordered: false} )
+          * In the above snippet, 3 records would be inserted, which includes "Jen"
 * Tip: mongo is indexed at 0
 
