@@ -146,12 +146,28 @@ Looking for multiple documents?
 
 * db.customers.find({})
   * Equivalent of SELECT \*
-* db.customers.find({},{name: 1, spend: 1})
-  * 1 specifies that the field will be returned
-  * \_id is always returned
-  * conversely, if you have 0, it will exclude just those fields
-  * you can NOT mix and match inclusion/exclusion with ONE exception
-    * You can explicitly exclude the \_id field while also including others
+*   db.customers.find({},{name: 1, spend: 1})
+
+    * 1 specifies that the field will be returned
+    * \_id is always returned
+    * conversely, if you have 0, it will exclude just those fields
+    * you can NOT mix and match inclusion/exclusion with ONE exception
+      * You can explicitly exclude the \_id field while also including others
+    * db.customers.find({lastpurchase: null})
+      * Will return documents even where lastpurchase field does not exist as it implicitly defines the value is null
+    * db.customers.find({gibberish:null})
+      * Returns every single document
+    * find vs findOne
+      * find will return a cursor that has a maximum of 100 documents or in some drivers, 16mb (C# is 48mb)
+        * A lot of drivers will obfuscate this behavior and iterate through the cursor for you
+      * If no documents are found, it will still return the object, but it will be empty
+    * db.customers.find({}).sort({age: -1}).skip(30).limit(10)
+      * Commands can be chained
+      * \-1 is descending
+      * order of chained operations does not matter, but in order to not confuse people, always write by **sort**, **skip**, and then **limit** for best practices
+    * db.customers.find({}).sort({age: -1, plate: -1}).skip(30).limit(10)
+
+    &#x20;
 
 
 
