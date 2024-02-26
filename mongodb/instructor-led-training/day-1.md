@@ -126,7 +126,7 @@ If you have to Insert 200 documents, is it better to use insertMany or insertOne
 
 
 
-#### Reading Data
+### Reading Documents
 
 * db.customers.findOne({})
   * Returns the first record
@@ -191,10 +191,58 @@ Looking for multiple documents?
   * ORDER within the query document does not matter unless you are referencing embedded documents
   * ORDER within the OR array does matter in the sense that the query will stop executing when the first condition is satisfied
     * In terms of performance, it may be faster for your query to start with the condition that is more frequent
+* db.customers.find({lastpurchase: {$exists: false})
+  * Returns any document where lastpurchase does not exist
+* db.customers.find({lastpurchase: {$exists: true, $eq: null})
+  * Returns any document where last purchase field exists and the value is set to NULL
+* db.fun.find({hobbies: {$all: \["rockets", "cars"]\}})
+  * returns any documents where the array contains all of those values, but the array itself could contain more values
+  * It is an AND operator
+* db.fun.find({hobbies: {$in: \["rockets", "cars"]\}})
+  * OR variant
+* db.ages.find({age: {$lt: 39, $gt: 21\}})
+  * when testing an array,. the moment you implement an operator document, you are now testing whether the SET of values in the array are going to meet the criteria
+  * age: \[40,20,8] would evaluate as true for the above logic because a value of less than 39 exists and a value of greater than 21 exists
+*   db.ages.find({age: {$elemMatch: {$lt: 39, $gt: 21\}}})
+
+    * elemMatch is an array operator that will walk the value of the array until it finds one element that must match ALL of the criteria
+    * The caveat to this is that $elemMatch only executes against an array and will not return documents that have ints
+
+    <figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 
 
+### Updating Documents
 
+* updateOne vs updateMany
+  * updateOne(query, change) - changes only the first matching document
+  * updateMany(query, change) - changes all matching documents
+
+Operators
+
+* Ex.  {$inc: {score: 50, numGames: 1}, $push: {gameId: 22, winLoss: "win"\}}
+  * Because all of this is being done in the same "mutation" document, you are guaranteed an atomic operation
+* $set - assign or replace a value on an existing document
+  * use dot notation to set a field in an embedded document
+    * be extra cautious when setting a NEW value inside of an embedded document as you are going to erase the entire existing field and replace it with your new value unless you use the dot notation
+    * {$set : { staff: {principal: "jones"} } vs {$set : { "staff.principal": "jones"} }&#x20;
+* $unset - remove a field from a document
+  * the value you set can be a "" blank string, it does not matter
+  * it does NOT set the value to NULL, it physically removes the data
+  * Ex. $unset: {"Singer":""\}}) is the same as $unset: {"Singer":"myrandomvalue"\}})&#x20;
+    * This is because it needs to be the standard across the mongodb environment
+* $inc / $mul - self explanatory
+  * Their are no decrement or divide operators
+    * Instead you will use a fractual value between 1 and 0 or a negative value&#x20;
+* $max / $min - can modify a field depending on its current value
+  * you could do a read + update, but their are problems with that..
+    * problem #1, the value of the \_id could change between your read and update
+    * problem #2, you incur additional load on the database because it is two operations
+  * It is essentially like adding a conditional to prevent an update
+  * $max makes it so that you can avoid an index on a field and increases performance
+    * This is more efficient than using $gt
+  * Most common use cases are dates and numbers
+    * e.g. you want to $max date when you want to update a date changed field
 
 
 
