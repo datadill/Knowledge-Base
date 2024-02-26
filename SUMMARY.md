@@ -15,9 +15,9 @@
   * [Bonus](t-sql/parameter-sniffing/bonus.md)
 * [SQL Server Buffer Pool](sql/sql-server-buffer-pool.md)
 
-## 💸 Personal Finance
+## 🖱️ MongoDB
 
-* [Page 1](personal-finance/page-1.md)
+* [Instructor Led Training](mongodb/instructor-led-training.md)
 
 ## 📣 Marketing
 
