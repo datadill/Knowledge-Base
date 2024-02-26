@@ -140,8 +140,6 @@ If you have to Insert 200 documents, is it better to use insertMany or insertOne
   * For numerical values, regardless of precision, Mongodb will still return the spend for customers with a spend of 0
   * In application code, you should use the proper data types as it will be mapped within Mongo
 
-
-
 Looking for multiple documents?
 
 * db.customers.find({})
@@ -152,8 +150,9 @@ Looking for multiple documents?
   * conversely, if you have 0, it will exclude just those fields
   * you can NOT mix and match inclusion/exclusion with ONE exception
     * You can explicitly exclude the \_id field while also including others
-  * db.customers.find({lastpurchase: null})
-    * Will return documents even where lastpurchase field does not exist as it implicitly defines the value is null
+    *
+    * db.customers.find({lastpurchase: null})
+  * Will return documents even where lastpurchase field does not exist as it implicitly defines the value is null
   * db.customers.find({gibberish:null})
     * Returns every single document
   * find vs findOne
@@ -188,7 +187,16 @@ Looking for multiple documents?
   * db.taxis.find({age: {$gt: 37}, plate: {$lt: 20, $lte: 50, $ne: 38, $in: \[40,44,45] } } )
     * This operates in AND behavior
     * operators can be on the same field as well
-  *
+  * db.pets.find({$or: \[{species: "cat", color: "black"},{species: "dog", color: "brown"}] })
+    * nesting boolean logic is valid
+    * ORDER within the query document does not matter unless you are referencing embedded documents
+    * ORDER within the OR array does matter in the sense that the query will stop executing when the first condition is satisfied
+      * In terms of performance, it may be faster for your query to start with the condition that is more frequent
+  * db.pets.find({color: {$not: {$eg: "Brown" } } })&#x20;
+    * Find all documents where color is not brown
+    * The same as: db.pets.find({color: {$ne: "Brown" } } )
+    * $not is considered an Operator document
+*
 
 
 
