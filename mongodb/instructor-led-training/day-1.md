@@ -94,7 +94,24 @@ MongoDB stores data as BSON:
   * For example, an email value.. although if the value changes you must delete the document
 * If you let mongoDB generate the ID, it will be unique across the entire database, but it only MUST be unique across the collection
   * i.e. you could easily have the same ID across multiple collections if you set it to something like "myemail@gmail.com"
-*
 
+```
+let friends = [ 
+    {_id: "joe" }, 
+    {_id: "bob" }, 
+    {_id: "joe" }, 
+    {_id: "jen" } 
+]
 
+db.collection1.insertMany(friends)
+```
+
+* In the above example.. Joe & Bob will all be inserted into the database
+  * Both Joe (the duplicate record) and Jen are NOT inserted
+    * This is the default insertMany behavior
+      * Atomicity is at the document level
+      * You can do multi-document transactions, but there are tradeoffs!
+      * db.collection2.insertMany(friends, {ordered: false} )
+        * In the above snippet, 3 records would be inserted, which includes "Jen"
+* Tip: mongo is indexed at 0
 
