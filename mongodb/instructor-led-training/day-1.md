@@ -142,3 +142,16 @@ If you have to Insert 200 documents, is it better to use insertMany or insertOne
 
 
 
+Looking for multiple documents?
+
+* db.customers.find({})
+  * Equivalent of SELECT \*
+* db.customers.find({},{name: 1, spend: 1})
+  * 1 specifies that the field will be returned
+  * \_id is always returned
+  * conversely, if you have 0, it will exclude just those fields
+  * you can NOT mix and match inclusion/exclusion with ONE exception
+    * You can explicitly exclude the \_id field while also including others
+
+
+
