@@ -146,28 +146,37 @@ Looking for multiple documents?
 
 * db.customers.find({})
   * Equivalent of SELECT \*
-*   db.customers.find({},{name: 1, spend: 1})
-
-    * 1 specifies that the field will be returned
-    * \_id is always returned
-    * conversely, if you have 0, it will exclude just those fields
-    * you can NOT mix and match inclusion/exclusion with ONE exception
-      * You can explicitly exclude the \_id field while also including others
-    * db.customers.find({lastpurchase: null})
-      * Will return documents even where lastpurchase field does not exist as it implicitly defines the value is null
-    * db.customers.find({gibberish:null})
-      * Returns every single document
-    * find vs findOne
-      * find will return a cursor that has a maximum of 100 documents or in some drivers, 16mb (C# is 48mb)
-        * A lot of drivers will obfuscate this behavior and iterate through the cursor for you
-      * If no documents are found, it will still return the object, but it will be empty
-    * db.customers.find({}).sort({age: -1}).skip(30).limit(10)
-      * Commands can be chained
-      * \-1 is descending
-      * order of chained operations does not matter, but in order to not confuse people, always write by **sort**, **skip**, and then **limit** for best practices
-    * db.customers.find({}).sort({age: -1, plate: -1}).skip(30).limit(10)
-
-    &#x20;
+* db.customers.find({},{name: 1, spend: 1})
+  * 1 specifies that the field will be returned
+  * \_id is always returned
+  * conversely, if you have 0, it will exclude just those fields
+  * you can NOT mix and match inclusion/exclusion with ONE exception
+    * You can explicitly exclude the \_id field while also including others
+  * db.customers.find({lastpurchase: null})
+    * Will return documents even where lastpurchase field does not exist as it implicitly defines the value is null
+  * db.customers.find({gibberish:null})
+    * Returns every single document
+  * find vs findOne
+    * find will return a cursor that has a maximum of 100 documents or in some drivers, 16mb (C# is 48mb)
+      * A lot of drivers will obfuscate this behavior and iterate through the cursor for you
+    * If no documents are found, it will still return the object, but it will be empty
+  * db.customers.find({}).sort({age: -1}).skip(30).limit(10)
+    * Commands can be chained
+    * \-1 is descending
+    * order of chained operations does not matter, but in order to not confuse people, always write by **sort**, **skip**, and then **limit** for best practices
+      * You can change this behavior with an "aggregate query", but we have not yet learned what that is
+  * db.customers.find({}).sort({age: -1, plate: -1}).skip(30).limit(10)
+  * .count() vs .countDocuments() vs .countDocuments({})
+    * they should almost always be the same, but their is a VERY extreme edge case where you are dealing with ultra precise application and high frequency apps
+      * .countDocuments() is faster
+      * .count()&#x20;
+      * .countDocuments({}) with an empty document cheats and uses the metadata stats, but it could be off by +/- 1
+  * db.people.find({address: {city: "Houston"\}})
+    * This will work ONLY if the field names, field order, and values match identically because mongodb creates a blob of the document
+    * The reason for this is because in Mongodb allows for 100 levels of nesting so it is more performant to just hash the document
+    * In the real world, you would typically not use the above syntax, but rather would use the below syntax
+  * db.people.find({"address.city": "Houston"})
+    * when referencing a child field (nested document), you MUST have double quotes around the key in the JSON document in your FIND operation
 
 
 
