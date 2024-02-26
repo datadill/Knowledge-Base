@@ -236,13 +236,39 @@ Operators
     * Instead you will use a fractual value between 1 and 0 or a negative value&#x20;
 * $max / $min - can modify a field depending on its current value
   * you could do a read + update, but their are problems with that..
-    * problem #1, the value of the \_id could change between your read and update
+    * problem #1, the value you are trying to update could change between your read and update
     * problem #2, you incur additional load on the database because it is two operations
-  * It is essentially like adding a conditional to prevent an update
+  * $max / $min is essentially like adding a conditional to prevent an update
   * $max makes it so that you can avoid an index on a field and increases performance
     * This is more efficient than using $gt
+    * You find all objects that satisfy your conditional and on that document evaluate whether the value is less than, if so, update the value, otherwise do nothing
   * Most common use cases are dates and numbers
     * e.g. you want to $max date when you want to update a date changed field
+
+### Deleting Documents
+
+* Recommended to find or findOne what you want to delete before deleting to verify the command is valid
+* deleteOne() and deleteMany()
+  * $unset of the UPDATE command only removes a field whereas delete removes a document
+* replaceOne() is typically not used&#x20;
+  * It erases everything on the document except the \_id field and replaces it with the content you are trying to set
+  * Typically you would just use $set
+
+## Updating, Locking, and Concurrency
+
+* If two processes attempt to update the same document at the same time they are serialised
+* The conditions in the query must always match for the update to take place
+* In the example, if the two updates take place in parallel - the result is the same
+* Locks are at the document level
+
+Ex. In below example, transaction B does nothing
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+* This is where stuff starts to back up and you run out of CPU
+* Furthermore, every single time the lead blocker runs it's operation, all of the queries in queue must re-evaluate
+
+
 
 
 
