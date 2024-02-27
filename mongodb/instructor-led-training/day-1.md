@@ -1,6 +1,6 @@
 # Day 1
 
-Storage
+## Storage
 
 MongoDB stores data as BSON:
 
