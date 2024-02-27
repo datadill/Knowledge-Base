@@ -19,10 +19,7 @@
 
 * [Instructor Led Training](mongodb/instructor-led-training/README.md)
   * [Day 1](mongodb/instructor-led-training/day-1.md)
-
-## 📣 Marketing
-
-* [Page 2](marketing/page-2.md)
+  * [Day 2](mongodb/instructor-led-training/day-2.md)
 
 ## 💻 Web Design
 

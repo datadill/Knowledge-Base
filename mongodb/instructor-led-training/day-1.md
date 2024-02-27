@@ -268,7 +268,46 @@ Ex. In below example, transaction B does nothing
 * This is where stuff starts to back up and you run out of CPU
 * Furthermore, every single time the lead blocker runs it's operation, all of the queries in queue must re-evaluate
 
+## Arrays Continued
 
+$push - append and element to the end of an array
 
+* Can be used in updateOne and updateMany
+* Fails if the field is not an array
+* Creates an array field if it does not already exist
+* Can be used with multiple modifiers
+* Ex. db.playlists.updateOne({name:"funky"}, {$push: {name: { artist: "AC/DC, track: "Thunderstruck\}}
+  * name must not be a string, it has to be an array
 
+$pop - removes last or first element from an array
+
+* Can be used in updateOne or updateMany commands
+* Fails if the field is not an array
+* Removing the first element renumbers all array elements
+* Ex. db.playlists.updateOne({name:"Funky",{$pop: {tracks: 1\}})
+  * You can also use -1 to delete the **first** element in the array
+
+$pull - remove specified elements from an array
+
+* Elements can be specified by value or condition
+* Will throw an error if not an array
+
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+
+$addToSet - appends an element to an array if it does not already exist
+
+* Does not affect existing duplicates in the array
+* Elements in the modified array can have any order
+* Fails if the field is not an array
+
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+
+$each - if you use $push to add an array to an existing array, it will nest the array so you need to use $each to add multiple values
+
+* Faster performance than using a FOR loop in code
+* You can also combine $each and $sort to insert new data in an ordered fashion
+  * To be clear, this reorganizes the entire array as the push occurs
+  * Note: the benefits of this command don't make much sense if you can't trust that all applications are modifying documents with $sort as the benefit only comes when you read a document and do not have to specify $sort
+
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
