@@ -12,7 +12,7 @@ SELECT \* FROM Foo WHERE Bar = 1&#x20;
 
 UPDATE Foo SET fname = 'p' WHERE Bar = 1
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 * For the update query above, go through all the normal steps and you eventually find the pages in the buffer pool
   * You then need to interact with the transaction manager and start writing to the log to ensure durability
@@ -37,7 +37,7 @@ UPDATE Foo SET fname = 'p' WHERE Bar = 1
     * Eager writer
       * SELECT INTO, Bulk Insert, WriteText and UpdateText.
 
-    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -45,7 +45,7 @@ UPDATE Foo SET fname = 'p' WHERE Bar = 1
 
 
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 * In a clustered index, the table is physically ordered, but the rows themselves could be anywhere on a page
   * at the bottom of the page is a slot array, which is indeed in physical order

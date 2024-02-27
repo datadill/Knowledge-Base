@@ -263,12 +263,12 @@ Operators
 
 Ex. In below example, transaction B does nothing
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 * This is where stuff starts to back up and you run out of CPU
 * Furthermore, every single time the lead blocker runs it's operation, all of the queries in queue must re-evaluate
 
-## Arrays Continued
+## Advanced Arrays
 
 $push - append and element to the end of an array
 
@@ -338,3 +338,29 @@ Modifying all matching elements
 * You must use arrayFilters when updating multiple items within an array
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+
+Expressive Updates
+
+* Mongo, unlike SQL Server, will actually persist the value of area so that subsequent reads do not have to recalculate the value
+* Note: if somebody modifies $w or $h field, I am not sure what happens as the instructor did not cover it
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Upsert
+
+* Most mongodb operations taht update also allow the flag "upsert: true"
+* Upsert inserts a new document if none are found to update
+* Values in both the query and update are used to create a new record
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+fineOneAndUpdate()
+
+* To understand this command, you must first understand updateOne()
+  * updateOne() finds and changes document atomicly and doesn't return the updated document unless you do a fineOne() afterwards (two separate transactions)
+* Imagine getting the next one-up number from a sequence
+* fineOneAndUpdate() prevents a potential race condition
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
