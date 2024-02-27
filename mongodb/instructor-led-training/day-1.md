@@ -324,3 +324,17 @@ Modifying a specific element in an array
 * Use the index of the array to target and modify the value
 
 <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+
+* You can also use "hrs.$" syntax to change the first index that matches the condition:
+
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+
+Modifying all matching elements
+
+* Query to find documents is not used to decide what elements to change
+* separate arrayFilters(s) apply update to matching array elements
+* this example adds 2 to everything less than 1 hr
+  * **nohrs** is like a variable in the below example
+* You must use arrayFilters when updating multiple items within an array
+
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
