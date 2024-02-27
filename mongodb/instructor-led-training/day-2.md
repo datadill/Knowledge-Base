@@ -92,7 +92,7 @@ Explainable Operations:
   * Can be used to run range searches or exact matches
 * Indexing an array is also possible, but it will be covered later
 
-### Unique Index
+### Unique Indexes
 
 * Indexes can enforce a unique constraint with the following flag:
   * {unique: true}
@@ -104,7 +104,7 @@ Explainable Operations:
 * Can greatly reduce index size
   * {partialFilterExpression: {archived: false } }
 
-### Sparse Index
+### Sparse Indexes
 
 * Sparse indexes don't index missing fields
   * Ex. db.scores.createIndex({score:1},{sparse:true})
@@ -119,7 +119,41 @@ Explainable Operations:
 * Downside: random values in a BTree use excessive resources
   * Ex. ({name: "hashed"})
 
+### Multikey Indexes
 
+* A multikey index is an index that is on an array
+* Can index primitives, documents, or sub-arrays
+* Are created using createIndexes() just like single-field indexes
+  * If any field in the index is ever found to be an  array than the index is multikey
+* An index entry is created on each unique value found in the array
+
+### Compound Indexes
+
+* Based on more than one field
+  * Most common type of index
+  * Same concept as RDBMS indexes
+  * Up to 32 fields
+  * Created like a single field index
+* The field order and direction is very important
+* Can be used as long as the first field in index is in the query
+  * Other fields in the index do not need to be in the query
+
+Field Order Matters
+
+* Equality First
+  * What fields, for a typical query, are filtered the most
+  * Selectivity is NOT cardinaility, selective can be a boolean choice
+  * Ex. Normally male/female is not selective
+  * Dispatched vs delivered is selective though
+* Then sort and range
+  * Sorts are much more expensive without indexes
+  * Directions matter when doing range queries
+
+ex:
+
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+
+* equality, sort, range (ESR)
 
 ## Listing Indexes
 
@@ -141,6 +175,20 @@ Explainable Operations:
 * Up to 64 indexes per collection, but you should avoid getting even remotely close to that
   * Write performance degrades to unusable between 20 and 30
 * 4 indexes per collection is a good recommended number, but the instructor recommended less than 10 in the real world
+
+
+
+## Indexing Arrays
+
+* 1st example below uses index 1
+* 2nd example below uses index 1
+* 3rd example below uses index 2
+
+<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+
+* elements in a nested array cannot be indexed, but you can change the structure like this and index it:
+
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 
 
