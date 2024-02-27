@@ -1,6 +1,6 @@
 # Day 1
 
-## Storage
+Storage
 
 MongoDB stores data as BSON:
 
@@ -311,3 +311,16 @@ $each - if you use $push to add an array to an existing array, it will nest the 
 
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
+$sort and $slice - sort and keep the top (or bottom) N elements
+
+* This is an example of a design pattern
+* Used for high/low lists - high scores, top 10 temperatures, etc
+* Order of operations applied (left to right) matters, which is contradictory to an earlier discussion
+
+<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+
+Modifying a specific element in an array
+
+* Use the index of the array to target and modify the value
+
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
