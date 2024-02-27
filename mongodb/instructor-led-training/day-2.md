@@ -1,11 +1,11 @@
 # Day 2
 
-Indexes and Optimization
+## Indexes and Optimization
 
 * Values in an index point to document identity
   * As a result, if the document moves the index doesn't change
 
-### Index Prefix Compression
+## Index Prefix Compression
 
 * MongoDB indexes use a special compressed format and you can not change it
 * Each entry is a delta from the previous one
@@ -14,7 +14,7 @@ Indexes and Optimization
 * Small indexes require less RAM
 * Indexes and collections exist in memory
 
-### Index Misconceptions
+## Index Misconceptions
 
 * MongoDB is so fast that it doesn't need indexes
 * Every field is automatically indexed
@@ -23,13 +23,13 @@ Indexes and Optimization
 
 
 
-### When to use an Index
+## When to use an Index
 
 * A good index should support every query or update
 * Scanning records is very inefficient, even if it is not all of them
 * The developer should determine the best index
 
-### Using and choosing indexes
+## Using and choosing indexes
 
 * Mongodb checks in the plan cache to see if an optimal index has been chosen before and if not:
   * picks all candidate indexes
@@ -209,7 +209,6 @@ If you are creating a multi-key index, only one of those values can be an array
 * Up to 64 indexes per collection, but you should avoid getting even remotely close to that
   * Write performance degrades to unusable between 20 and 30
 * 4 indexes per collection is a good recommended number, but the instructor recommended less than 10 in the real world
-*
 
 
 
@@ -225,8 +224,49 @@ If you are creating a multi-key index, only one of those values can be an array
 
 <figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
+## Finding Slow Operations
+
+* Missing index is usually the most common cause
+* Bad client code is a close second cause
+* Two ways to locate:
+  * database log
+    * Gets last 1024 log entries
+    * Returns a single document
+  * profiling a database
+* You can filter on "s" attribute for severity
+* You can also download all of the logs directly from the mongo atlas
+* db.setProfilingLevels(level,slowms)
+  * 0 - profiler is off
+  * 1 - store only slow queries
+  * 2 - store all queries
+  * slowms: threshold in milliseconds for slow operations
+
+## Aggregations
+
+* Aggregation allows us to compute new data
+  * Calculated fields
+  * summarized and grouped values
+  * reshaped documents
+* Aggregation is a pipeline
+  * Each transformation is a single step known as a stage
+  * This is easier to:
+    * debug
+    * understand
+    * rewrite and optimize
+  * Think of a powershell pipe!
 
 
 
+Stages:
 
-###
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+
+Ex.
+
+<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+
+* Advised to put the $project at the end
+
+### Dollar Overloading
+
+<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
