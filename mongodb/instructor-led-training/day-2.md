@@ -1,6 +1,6 @@
 # Day 2
 
-## Indexes and Optimization
+Indexes and Optimization
 
 * Values in an index point to document identity
   * As a result, if the document moves the index doesn't change
@@ -153,7 +153,41 @@ ex:
 
 <figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
-* equality, sort, range (ESR)
+* equality, sort, range (ESR) - methodology used 85% of the time
+  * 15% of the time, you may want to use ERS instead
+
+Ex.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+
+*   In above example, the index should swap and put the equality operator first like so:
+
+    <figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+
+
+* Another example:
+
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+
+If you are creating a multi-key index, only one of those values can be an array
+
+* An error will be thrown if you try to index on multiple arrays within the same document
+* The error thrown can happen on either an INSERT or the creation of the index itself
+
+
+
+### Time to Live (TTL) Indexes
+
+* Not a special index, but rather a flag
+* MongoDB automatically deletes documents using the index based on time
+* Background thread in server runs regularly to delete expired documents
+
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+
+* Alternative to the above example, you can use a field and  set expireAfterSeconds: 0
+* Sometimes it is better to write your own programmatic data cleaner and schedule via CRON
+
+
 
 ## Listing Indexes
 
@@ -175,6 +209,7 @@ ex:
 * Up to 64 indexes per collection, but you should avoid getting even remotely close to that
   * Write performance degrades to unusable between 20 and 30
 * 4 indexes per collection is a good recommended number, but the instructor recommended less than 10 in the real world
+*
 
 
 
