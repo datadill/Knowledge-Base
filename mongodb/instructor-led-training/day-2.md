@@ -266,7 +266,35 @@ Ex.
 <figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 * Advised to put the $project at the end
+* Everything done in aggregate is done in memory
+* Unlike a find command, Aggregate is more controllable and reads from top to bottom
 
 ### Dollar Overloading
 
 <figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+
+* In above image, the 3rd line reads like this:
+  * Set a new field in the document called area with a value that is 5x10
+* 1st line
+  * Match stage means you are filtering
+* 2nd line
+  * You are altering or adding a new field
+* 4th line
+  * Set a new field and use a $map function against prices, assigning p as your iterator variable and walk over the array multiplying each value \$$p by 1.08
+
+### Expressions
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+* In the above, the most nested value gets executed first and it goes up the chain
+* Other arithmetic expressions:
+  * $subtract, $add, $multiply, $divide
+* String expressions:
+  * $concat, $ltrim, $indexOf, etc
+* Expressions can affect index usage just like SQL Server
+
+
+
+General recommendation when writing aggregations is to break up the commands into stages/variables:
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
