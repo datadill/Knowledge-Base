@@ -263,7 +263,7 @@ Operators
 
 Ex. In below example, transaction B does nothing
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 * This is where stuff starts to back up and you run out of CPU
 * Furthermore, every single time the lead blocker runs it's operation, all of the queries in queue must re-evaluate
@@ -344,7 +344,7 @@ Expressive Updates
 * Mongo, unlike SQL Server, will actually persist the value of area so that subsequent reads do not have to recalculate the value
 * Note: if somebody modifies $w or $h field, I am not sure what happens as the instructor did not cover it
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Upsert
 
@@ -352,7 +352,7 @@ Upsert
 * Upsert inserts a new document if none are found to update
 * Values in both the query and update are used to create a new record
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 fineOneAndUpdate()
 
@@ -361,6 +361,6 @@ fineOneAndUpdate()
 * Imagine getting the next one-up number from a sequence
 * fineOneAndUpdate() prevents a potential race condition
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
