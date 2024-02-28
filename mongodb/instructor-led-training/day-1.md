@@ -1,4 +1,4 @@
-# Day 1
+# DF100
 
 ## Storage
 
@@ -344,7 +344,7 @@ Expressive Updates
 * Mongo, unlike SQL Server, will actually persist the value of area so that subsequent reads do not have to recalculate the value
 * Note: if somebody modifies $w or $h field, I am not sure what happens as the instructor did not cover it
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Upsert
 

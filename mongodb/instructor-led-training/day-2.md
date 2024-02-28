@@ -1,4 +1,4 @@
-# Day 2
+# DF200
 
 ## Indexes and Optimization
 
@@ -284,7 +284,7 @@ Ex.
 
 ### Expressions
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 * In the above, the most nested value gets executed first and it goes up the chain
 * Other arithmetic expressions:
@@ -297,4 +297,4 @@ Ex.
 
 General recommendation when writing aggregations is to break up the commands into stages/variables:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
