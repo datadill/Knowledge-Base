@@ -18,8 +18,9 @@
 ## 🖱️ MongoDB
 
 * [Instructor Led Training](mongodb/instructor-led-training/README.md)
-  * [Day 1](mongodb/instructor-led-training/day-1.md)
-  * [Day 2](mongodb/instructor-led-training/day-2.md)
+  * [DF100](mongodb/instructor-led-training/df100.md)
+  * [DF200](mongodb/instructor-led-training/df200.md)
+  * [DF300](mongodb/instructor-led-training/df300.md)
 
 ## 💻 Web Design
 
