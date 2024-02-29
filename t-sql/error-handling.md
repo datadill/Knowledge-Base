@@ -26,7 +26,7 @@ TRY..CATCH only catches medium level SQL errors!
 
 Table variables ignore ROLLBACK, which make them perfect for debugging&#x20;
 
-![](<../.gitbook/assets/image (2) (1) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png>)
 
 ![](<../.gitbook/assets/image (1) (2).png>)
 

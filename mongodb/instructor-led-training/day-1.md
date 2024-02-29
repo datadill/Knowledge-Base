@@ -4,14 +4,14 @@
 
 MongoDB stores data as BSON:
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 * In the above example, you can enforce uniqueness of "Dental" value for the "type" key by creating an index
 * Additionally, you can put validation on the data itself, but their may be downsides to that
 
 ## Terminology
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 * namespace is nothing more than database name + collection name that helps you distinguish between two similarly named collections
 
@@ -62,13 +62,13 @@ MongoDB stores data as BSON:
 * DBAs need to be trained and certified
   * Devs perform traditional DBA tasks, but DBAs have very important tasks as well
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ## CRUD Operations
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 * If multiple documents satisfy the query for a single document command, it will return the first 1 on disk if it exists
   * Searching the index takes precedence
@@ -208,7 +208,7 @@ Looking for multiple documents?
     * elemMatch is an array operator that will walk the value of the array until it finds one element that must match ALL of the criteria
     * The caveat to this is that $elemMatch only executes against an array and will not return documents that have ints
 
-    <figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -263,7 +263,7 @@ Operators
 
 Ex. In below example, transaction B does nothing
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * This is where stuff starts to back up and you run out of CPU
 * Furthermore, every single time the lead blocker runs it's operation, all of the queries in queue must re-evaluate
@@ -292,7 +292,7 @@ $pull - remove specified elements from an array
 * Elements can be specified by value or condition
 * Will throw an error if not an array
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 $addToSet - appends an element to an array if it does not already exist
 
@@ -300,7 +300,7 @@ $addToSet - appends an element to an array if it does not already exist
 * Elements in the modified array can have any order
 * Fails if the field is not an array
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 $each - if you use $push to add an array to an existing array, it will nest the array so you need to use $each to add multiple values
 
@@ -344,7 +344,7 @@ Expressive Updates
 * Mongo, unlike SQL Server, will actually persist the value of area so that subsequent reads do not have to recalculate the value
 * Note: if somebody modifies $w or $h field, I am not sure what happens as the instructor did not cover it
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Upsert
 
@@ -352,7 +352,7 @@ Upsert
 * Upsert inserts a new document if none are found to update
 * Values in both the query and update are used to create a new record
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 fineOneAndUpdate()
 
@@ -361,6 +361,6 @@ fineOneAndUpdate()
 * Imagine getting the next one-up number from a sequence
 * fineOneAndUpdate() prevents a potential race condition
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
