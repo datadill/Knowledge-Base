@@ -21,6 +21,7 @@
   * [DF100](mongodb/instructor-led-training/day-1.md)
   * [DF200](mongodb/instructor-led-training/day-2.md)
   * [DF300](mongodb/instructor-led-training/df300.md)
+  * [DF400](mongodb/instructor-led-training/df400.md)
 
 ## 💻 Web Design
 
