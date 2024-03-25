@@ -70,3 +70,13 @@ MongoDB Logs are structured in JSON format
 * "c" is the category tag
 * "id" is a unique identifier
 * "ctx" is the name of the thread that caused the message
+
+<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+
+* Logs will only contain keys that they have info for
+
+Log Rotation
+
+* prevents log files from consuming too much disk space
+* MongoDB does not automatically rotate the logs, but a system admin can do so
+  * db.adminCommand ({logRotate: "server"})
