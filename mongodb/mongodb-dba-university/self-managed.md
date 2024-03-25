@@ -1,6 +1,12 @@
 # Self-managed
 
-## Lesson 3: Connecting to MongoDB Server
+## Connecting to MongoDB Server
+
+
+
+Running mongosh with no params will default to 127.0.0.1:27017
+
+
 
 Localhost Exception&#x20;
 
@@ -49,7 +55,7 @@ MongoDB Shell (mongosh)
 
 ## Logging Basics
 
-db.serverCmdLineOpts().parsed.systemLog.Path
+db.serverCmdLineOpts().parsed.systemLog.path
 
 * Command utility to help you find the location of the logs on disk
 
@@ -80,3 +86,4 @@ Log Rotation
 * prevents log files from consuming too much disk space
 * MongoDB does not automatically rotate the logs, but a system admin can do so
   * db.adminCommand ({logRotate: "server"})
+
