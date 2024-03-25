@@ -23,7 +23,8 @@
   * [DF300](mongodb/instructor-led-training/df300.md)
   * [DF400](mongodb/instructor-led-training/df400.md)
 * [MongoDB DBA University](mongodb/mongodb-dba-university/README.md)
-  * [Self-managed](mongodb/mongodb-dba-university/self-managed.md)
+  * [DBA](mongodb/mongodb-dba-university/dba.md)
+  * [Metrics & Monitoring](mongodb/mongodb-dba-university/metrics-and-monitoring.md)
 
 ## 💻 Web Design
 
