@@ -84,7 +84,7 @@ Step 5
 * Let them know that if you just build a website, it will not drive 50 leads a month.. you need to market the site for them and that can easily lead to 1-2k per month
 * That's the 7 step process we follow to make sure every site gets you from point A to point B on time, on budget, without fail. Is that more or less involves than you imagine?
   * By saying all of this, you have communicated how much work goes into this
-* ![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png>)
+* ![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 
 

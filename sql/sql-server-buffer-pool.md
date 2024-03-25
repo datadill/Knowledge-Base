@@ -37,7 +37,7 @@ UPDATE Foo SET fname = 'p' WHERE Bar = 1
     * Eager writer
       * SELECT INTO, Bulk Insert, WriteText and UpdateText.
 
-    <figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
