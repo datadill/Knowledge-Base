@@ -1,6 +1,6 @@
 # Metrics & Monitoring
 
-### Core metrics:
+### Core metrics
 
 * Query targeting
   * Ideal ratio is 1 where a document is returned for every one read
@@ -110,3 +110,76 @@ atlas alerts acknowledge <alertId> --comment <comment>
 ```
 atlas alerts unacknowledge <alertId>
 ```
+
+
+
+### Integrations
+
+Good for hybrid situations or for when you are migrating on-prem to cloud
+
+Examples:
+
+* Prometheus, pagerduty, datadog, sumo, splunk, custom web hooks, etc
+  * Prometheus and DD are only on M10+ clusters
+
+In database dashboard, click elipses and go to Integrations
+
+* Typically you fill in your credentials here for your connection
+
+
+
+### Self-Managed Monitoring
+
+Cloud Manager or a hybrid solution listed above can be used
+
+* note: prometheus for example can not directly collect metrics from an onprem solution, but their are open source connectors such as Percona
+* The account collecting data will need clusterMonitor role
+
+
+
+### Command Line Metrics
+
+serverStatus
+
+* diagnostic command that returns a document showing current instance state
+* This command is used by monitoring platforms to collect valuable metrics
+*   Ex:&#x20;
+
+    ```
+    db.runCommand(
+       {
+         serverStatus: 1
+       }
+    )
+    ```
+* Ex helper command: db.serverStatus()
+
+currentOp
+
+* admin command that returns document about active operations
+* monitoring apps use this command to find slow operations
+*   Ex.&#x20;
+
+    ```
+    db.adminCommand(
+       {
+         currentOp: true,
+         "$all": true
+       }
+    )
+    ```
+
+killOp
+
+* terminates operations using opId
+*   Ex.&#x20;
+
+    ```
+    db.adminCommand(
+       {
+         killOp: 1,
+         op: <opid>,
+         comment: <any>
+       }
+    )
+    ```
