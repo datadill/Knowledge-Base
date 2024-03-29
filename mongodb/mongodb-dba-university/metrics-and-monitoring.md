@@ -183,3 +183,4 @@ killOp
        }
     )
     ```
+* Helper function: db.killOp()
