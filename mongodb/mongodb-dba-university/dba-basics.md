@@ -1,4 +1,4 @@
-# DBA
+# DBA Basics
 
 ## Connecting to MongoDB Server
 
@@ -36,13 +36,13 @@ show users
     * Prompts user for password
     *
 
-        <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 db.adminCommand(\<command>)
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * The above examples are the exact same, but the 2nd command is preferred as it does not require you to switch database context
 * The main purpose of this admin database is to store system collections and user authentication and authorization data, which includes the administrator and user's usernames, passwords, and roles. Access is limited to only to administrators, who have the ability to create, update, and delete users and assign roles.

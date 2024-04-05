@@ -48,20 +48,20 @@
 
 atlas processes list
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 atlas metrics processes atlas-jj12z4-shard-00-00.p31f3ej.mongodb.net:27017 --period P1D --granularity PT1M
 
 * P1D stands for 1 day
 * PT1M is 1 minute intervals
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 or..
 
 atlas metrics processes atlas-jj12z4-shard-00-00.p31f3ej.mongodb.net:27017 --period P1D --granularity PT1M --output json --type CONNECTIONS | jq '.measurements\[0].dataPoints |= .\[-10:]'
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -80,9 +80,9 @@ atlas metrics processes atlas-jj12z4-shard-00-00.p31f3ej.mongodb.net:27017 --per
 atlas alerts settings list --output json
 ```
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Responding to Alerts
 

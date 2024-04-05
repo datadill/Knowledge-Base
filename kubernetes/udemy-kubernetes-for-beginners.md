@@ -140,3 +140,22 @@ Requirements:
 
 
 
+## YAML
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+* spacing in YAML is very important
+* arrays are defined with a "-"
+
+
+
+### Dictionary vs List vs List of Dictionaries
+
+* Dictionary is unordered while a list/array is ordered
+
+<figure><img src="../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
