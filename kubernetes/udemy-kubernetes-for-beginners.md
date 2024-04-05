@@ -116,6 +116,27 @@ Simple example:
 Multi-container PODs
 
 * &#x20;a single pod can have multiple containers, but typically the containers are not of the same kind
-  * you may have a "helper" pod that lives along side your application container, but does an ancillary resource
+  * you may have a "helper" pod that lives along side your application container
   * They can refer to each other as localhost and can also share the same storage space
+* You deploy your container by running docker run command and you keep running that to create new containers
+  * If you also have helper containers, it is best to define those in separate pods so that they scale together
+  * Even if your app has a single container, K8s requires you to use PODs
+
+## Installing MiniKube locally
+
+Requirements:
+
+1\) kubectl
+
+[https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+
+2\) virtualbox (or some other virtualization driver like hyper-v, which may already be installed)
+
+[https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+
+3\) minikube
+
+[https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
+
+
 
